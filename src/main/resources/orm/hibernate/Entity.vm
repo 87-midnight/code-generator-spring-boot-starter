@@ -1,0 +1,20 @@
+import java.lang.$primayKeyTYpe;
+#if($swaggerEnabled)
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+#end
+#if ($isPersistable and $isSerializeble)
+import org.springframework.data.domain.Persistable;
+import java.io.Serializable;
+#end
+
+#if($swaggerEnabled)
+@ApiModel("$apiModelName")
+#end
+public class ${entityName} #if ($isPersistable and $isSerializeble) implement Persistable<$primaryKeyType>,Serializable #end{
+#set($i=0)
+#foreach($field in $fieldList)
+
+    #set($i=$i+1)
+#end
+}
