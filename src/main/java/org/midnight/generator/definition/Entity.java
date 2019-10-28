@@ -1,0 +1,27 @@
+package org.midnight.generator.definition;
+
+import lombok.Builder;
+import lombok.Data;
+import org.midnight.generator.converter.pojo.FieldInfo;
+
+import java.util.List;
+
+/**
+ * entity 实体类配置
+ * @author linchuangang
+ * @create 2019-10-28 11:11
+ **/
+@Data
+@Builder
+public class Entity {
+
+    /**是否开启swagger2 模型配置,default:false**/
+    private boolean swaggerModelEnabled;
+    /**swagger2 api 模型对象名称**/
+    private String apiModelName;
+    private boolean isPersistable;
+    private boolean isSerializable;
+    private String primaryKeyType;
+    private String entityName;
+    private List<FieldInfo> fieldList;
+}

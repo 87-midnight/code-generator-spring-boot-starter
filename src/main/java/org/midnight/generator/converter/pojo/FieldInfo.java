@@ -10,4 +10,8 @@ import lombok.Data;
 @Data
 @Builder
 public class FieldInfo {
+
+    private String propertyType;
+    private String propertyName;
+    private String comment;
 }

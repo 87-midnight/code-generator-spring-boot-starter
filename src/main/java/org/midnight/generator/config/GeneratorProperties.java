@@ -10,5 +10,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "midnight.generator")
 @Data
 public class GeneratorProperties {
-    private Boolean enabled;
+    /**是否开启代码生成器**/
+    private boolean enabled;
 }

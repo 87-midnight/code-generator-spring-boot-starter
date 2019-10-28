@@ -1,20 +1,27 @@
-import java.lang.$primayKeyTYpe;
-#if($swaggerEnabled)
+#if($entityConfig.swaggerModelEnabled)
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 #end
-#if ($isPersistable and $isSerializeble)
+#if ($entityConfig.isPersistable and $entityConfig.isSerializable)
 import org.springframework.data.domain.Persistable;
 import java.io.Serializable;
 #end
 
-#if($swaggerEnabled)
-@ApiModel("$apiModelName")
+#if($entityConfig.swaggerModelEnabled)
+@ApiModel("$entityConfig.apiModelName")
 #end
-public class ${entityName} #if ($isPersistable and $isSerializeble) implement Persistable<$primaryKeyType>,Serializable #end{
+public class ${entityConfig.entityName} #if ($entityConfig.isPersistable and $entityConfig.isSerializable) implement Persistable<$entityConfig.primaryKeyType>,Serializable #end{
 #set($i=0)
-#foreach($field in $fieldList)
+#foreach($field in $entityConfig.fieldList)
 
     #set($i=$i+1)
 #end
+
+#if($entityConfig.isPersistable)
+    @override
+    public boolean isNew(){
+        return true;
+    }
+#end
+
 }
