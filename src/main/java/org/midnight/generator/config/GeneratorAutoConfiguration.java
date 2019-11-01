@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
  **/
 @Configuration
 //使用EnableConfigurationProperties,方便统一管理需要自动注入的类，不需要每个类都加上component注解
-@EnableConfigurationProperties({GeneratorProperties.class, EntitiesConfig.class})
+@EnableConfigurationProperties({GeneratorProperties.class, EntityGenerateConfig.class})
 @ConditionalOnProperty(prefix = "midnight.generator",value = "enabled",havingValue = "true")
 public class GeneratorAutoConfiguration {
 

@@ -1,4 +1,4 @@
-package org.midnight.generator.definition;
+package org.midnight.generator.context;
 
 import lombok.Builder;
 import lombok.Data;

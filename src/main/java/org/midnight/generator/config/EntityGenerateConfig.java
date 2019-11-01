@@ -12,10 +12,10 @@ import java.util.List;
  * @author linchuangang
  * @create 2019-10-28 11:42
  **/
-@ConfigurationProperties(prefix = "midnight.entities")
+@ConfigurationProperties(prefix = "midnight.generate.entity")
 @Data
 @Builder
-public class EntitiesConfig {
+public class EntityGenerateConfig {
 
     private List<String> entityNameList;
 }
