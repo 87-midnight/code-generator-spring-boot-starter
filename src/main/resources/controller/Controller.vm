@@ -1,0 +1,7 @@
+#if($controllerConfig.swaggerControllerEnabled)
+@Api(tag="$controllerConfig.tagName")
+#end
+@RestController
+public class $entityConfig.entityName {
+
+}
