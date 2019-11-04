@@ -11,7 +11,9 @@ import lombok.Data;
 @Builder
 public class FieldInfo {
 
+    private String fieldName;
     private String propertyType;
     private String propertyName;
+    private boolean isPrimaryKey;
     private String comment;
 }
