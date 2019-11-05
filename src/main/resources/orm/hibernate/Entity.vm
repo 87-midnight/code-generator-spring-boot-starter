@@ -6,9 +6,14 @@ import io.swagger.annotations.ApiModelProperty;
 import org.springframework.data.domain.Persistable;
 import java.io.Serializable;
 #end
-
+#if(${entityConfig.lombokEnabled})
+import lombok.Data;
+#end
 #if($entityConfig.swaggerModelEnabled)
 @ApiModel("$entityConfig.apiModelName")
+#end
+#if(${entityConfig.lombokEnabled})
+@Data
 #end
 public class ${entityConfig.entityName} #if ($entityConfig.isPersistable and $entityConfig.isSerializable) implement Persistable<$entityConfig.primaryKeyType>,Serializable #end{
 #set($i=0)

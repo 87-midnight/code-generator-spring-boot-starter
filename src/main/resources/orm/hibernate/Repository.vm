@@ -1,0 +1,14 @@
+package ${repository.packageName}
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+/**
+* ${entity.entityName} 数据库访问层
+* @author ${common.author}
+*
+*/
+public interface ${entity.entityName}${repository.suffixName} extends JpaRepository<${entity.entityName}, ${entity.primaryKeyType}>{
+
+
+}

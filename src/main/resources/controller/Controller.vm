@@ -38,4 +38,14 @@ public class $entity.entityName$controller.suffixName {
     public Object queryList(){
       return this.$service.humpName.list();
     }
+
+    /**
+    * 查看${entity.entityName} 详情
+    */
+    @GetMapping(value="/get")
+    @ApiOperation(value="查看${entity.entityName}详情")
+    public Object get(@ApiParam(name="主键",value="${entity.primaryKeyName}")@RequestParam ${entity.primaryKeyType} ${entity.primaryKeyName}){
+      return this.${service.humpName}.get(${entity.primaryKeyName});
+    }
+
 }
