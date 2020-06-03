@@ -4,7 +4,8 @@ package org.midnight.generator.query;
  * @author linchuangang
  * @create 2019-10-25 16:13
  **/
-public class PostgreQuery implements AbstractQuery<String> {
+public class PostgresQuery implements AbstractQuery<String> {
+
     @Override
     public String queryFieldsInfo(String tableName) {
         return "SELECT A.attname AS name, format_type(A.atttypid, A.atttypmod) AS type,col_description(A.attrelid, A.attnum) AS comment, (CASE C.contype WHEN 'p' THEN 'PRI' ELSE '' END) AS key " +
