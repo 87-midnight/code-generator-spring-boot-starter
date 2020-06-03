@@ -1,0 +1,38 @@
+#if($entityConfig.swaggerModelEnabled)
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+#end
+#if ($entityConfig.isPersistable and $entityConfig.isSerializable)
+import org.springframework.data.domain.Persistable;
+import java.io.Serializable;
+#end
+#if(${entityConfig.lombokEnabled})
+import lombok.Data;
+#end
+#if($entityConfig.swaggerModelEnabled)
+@ApiModel("$entityConfig.apiModelName")
+#end
+#if(${entityConfig.lombokEnabled})
+@Data
+#end
+public class ${entityConfig.entityName} #if ($entityConfig.isPersistable and $entityConfig.isSerializable) implement Persistable<$entityConfig.primaryKeyType>,Serializable #end{
+#set($i=0)
+#foreach($field in $entityConfig.fieldList)
+    /**${field.comment}**/
+    #if(${field.isPrimaryKey})
+    @Id
+        #else
+    @Column(name="${field.fieldName}")
+    #end
+    private ${field.propertyType} ${field.propertyName};
+    #set($i=$i+1)
+#end
+
+#if($entityConfig.isPersistable)
+    @override
+    public boolean isNew(){
+        return true;
+    }
+#end
+
+}
