@@ -2,9 +2,6 @@ package org.midnight.generator.properties;
 
 import lombok.Builder;
 import lombok.Data;
-import org.midnight.generator.converter.pojo.FieldInfo;
-
-import java.util.List;
 
 /**
  * entity 实体类配置

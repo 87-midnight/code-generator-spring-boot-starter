@@ -22,6 +22,9 @@ public class GeneratorProperties implements InitializingBean {
     /**是否开启代码生成器**/
     private boolean enabled;
 
+    /**ORM框架选择激活类型，可选值为mybatis,jpa。默认为mybatis**/
+    private String active = "mybatis";
+
     private String output;
 
     private List<EntityProperties> entities;
