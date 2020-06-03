@@ -1,4 +1,4 @@
-package org.midnight.generator.context;
+package org.midnight.generator.properties;
 
 import lombok.Builder;
 import lombok.Data;
@@ -13,7 +13,7 @@ import java.util.List;
  **/
 @Data
 @Builder
-public class Entity {
+public class EntityProperties {
 
     /**是否开启swagger2 模型配置,default:false**/
     private boolean swaggerModelEnabled;
@@ -23,5 +23,4 @@ public class Entity {
     private boolean isSerializable;
     private String primaryKeyType;
     private String entityName;
-    private List<FieldInfo> fieldList;
 }

@@ -1,4 +1,4 @@
-package org.midnight.generator;
+package org.midnight.generator.engine;
 
 
 import lombok.Builder;
@@ -7,7 +7,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.Velocity;
-import org.apache.velocity.app.VelocityEngine;
 
 import java.io.StringWriter;
 import java.io.Writer;
@@ -19,12 +18,6 @@ import java.util.ArrayList;
  **/
 @Slf4j
 public class CodeGenerator {
-
-    private CodeGenerator(){}
-
-    public static CodeGenerator getInstance(){
-        return new CodeGenerator();
-    }
 
     public void print(){
         log.info("starter test");
