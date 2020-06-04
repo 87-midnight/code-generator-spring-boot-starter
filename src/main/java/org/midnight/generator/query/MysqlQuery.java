@@ -10,11 +10,11 @@ public class MysqlQuery implements AbstractQuery<String>{
 
     @Override
     public String queryFieldsInfo(String tableName) {
-        return "show full fields from `%s`";
+        return String.format("show full fields from `%s`", tableName);
     }
 
     @Override
     public String queryTableInfo(String tableName) {
-        return "show table status";
+        return String.format("show table status where Name = '%s'", tableName);
     }
 }

@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.Velocity;
+import org.midnight.generator.properties.GeneratorProperties;
 
 import java.io.StringWriter;
 import java.io.Writer;
@@ -17,7 +18,16 @@ import java.util.ArrayList;
  * @create 2019-10-24 9:36
  **/
 @Slf4j
+@Data
 public class CodeGenerator {
+
+    private GeneratorProperties properties;
+
+    private VelocityContext context;
+
+    public CodeGenerator(GeneratorProperties properties) {
+        this.properties = properties;
+    }
 
     public void print(){
         log.info("starter test");

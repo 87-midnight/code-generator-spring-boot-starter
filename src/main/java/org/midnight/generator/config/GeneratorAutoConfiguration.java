@@ -21,12 +21,12 @@ public class GeneratorAutoConfiguration implements Ordered {
 
     @Bean
     @ConditionalOnMissingBean(CodeGenerator.class)
-    public CodeGenerator codeGenerator(){
-        return new CodeGenerator();
+    public CodeGenerator codeGenerator(GeneratorProperties properties){
+        return new CodeGenerator(properties);
     }
 
     @Override
     public int getOrder() {
-        return -999;
+        return 0;
     }
 }
