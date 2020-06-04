@@ -9,15 +9,13 @@ import lombok.Data;
  * @create 2019-10-28 11:11
  **/
 @Data
-@Builder
 public class EntityProperties {
 
     /**是否开启swagger2 模型配置,default:false**/
-    private boolean swaggerModelEnabled;
+    private boolean swaggerenabled;
     /**swagger2 api 模型对象名称**/
-    private String apiModelName;
-    private boolean isPersistable;
-    private boolean isSerializable;
-    private String primaryKeyType;
-    private String entityName;
+    private String modelname;
+    private boolean persistable;
+    private boolean serializable;
+    private String tablename;
 }
