@@ -57,43 +57,7 @@ public class DatabaseEngineImpl implements DatabaseEngine{
             for (String tableName : tableNameList){
                 TableInfo tableInfo = new TableInfo();
                 List<ColumnInfo> columnInfos = new ArrayList<>();
-                ResultSet primaryKeys = metaData.getPrimaryKeys(connection.getCatalog(), connection.getSchema(), tableName);
-                String primaryKeyName = null;
-                if (primaryKeys.next()) {
-                    primaryKeyName = primaryKeys.getString("COLUMN_NAME");
-                }
-                //精准匹配表，获取表字段信息q
-                ResultSet colRet = metaData.getColumns(connection.getCatalog(), connection.getSchema(), tableName, null);
-                while (colRet.next()) {
-                    //字段名
-                    String columnName = colRet.getString("COLUMN_NAME");
-                    //字段注释
-                    String remarks = colRet.getString("REMARKS");
-                    //对应typesSql的值
-                    int javaTypesSql = colRet.getInt("DATA_TYPE");
-                    //字段长度
-                    int precision = colRet.getInt("COLUMN_SIZE");
-                    //精度
-                    int scale = colRet.getInt("DECIMAL_DIGITS");
-                    //是否为空：0就表示Not Null，1表示可以是Null
-                    int nullable = colRet.getInt("NULLABLE");
-                    //字段索引定位：从1开始
-                    int position = colRet.getInt("ORDINAL_POSITION");
 
-                    JavaSqlTypeEnum typeEnum = EnumUtil.getByCode(javaTypesSql, JavaSqlTypeEnum.class);
-                    String columnTypeName = String.valueOf(typeEnum.getName());
-
-                    ColumnInfo column = new ColumnInfo();
-                    column.setColumnIndex(position);
-                    column.setColumnSource(columnName);
-                    column.setColumnType(StringUtils.upperCase(columnTypeName));
-                    column.setColumnPrecision(precision);
-                    column.setColumnScale(scale);
-                    column.setNullable(nullable == 1);
-                    column.setColumnComment(remarks);
-                    column.setIsPrimaryKey(Objects.equals(primaryKeyName, columnName));
-                    columnInfos.add(column);
-                }
                 tableInfo.setColumns(columnInfos);
                 tableInfo.setTableName(tableName);
                 tableInfoList.add(tableInfo);
