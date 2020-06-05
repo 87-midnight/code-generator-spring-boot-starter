@@ -15,7 +15,6 @@
  */
 package org.midnight.generator.converter;
 
-import com.baomidou.mybatisplus.generator.config.rules.IColumnType;
 
 /**
  * 表字段类型

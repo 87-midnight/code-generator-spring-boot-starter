@@ -31,4 +31,38 @@ public class SqlServerQuery implements AbstractQuery<String> {
             "left JOIN sys.extended_properties sep on sep.major_id=so.id and sep.minor_id=0 " +
             "where (xtype='U' or xtype='v')";
     }
+
+    @Override
+    public String tableName() {
+        return "TABLE_NAME";
+    }
+
+
+    @Override
+    public String tableComment() {
+        return "COMMENTS";
+    }
+
+
+    @Override
+    public String fieldName() {
+        return "COLUMN_NAME";
+    }
+
+
+    @Override
+    public String fieldType() {
+        return "DATA_TYPE";
+    }
+
+
+    @Override
+    public String fieldComment() {
+        return "COMMENTS";
+    }
+
+    @Override
+    public String fieldKey() {
+        return "KEY";
+    }
 }

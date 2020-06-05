@@ -23,4 +23,38 @@ public class OracleQuery implements AbstractQuery<String> {
     public String queryTableInfo(String tableName) {
         return String.format("SELECT * FROM ALL_TAB_COMMENTS WHERE OWNER='%s'", tableName);
     }
+
+    @Override
+    public String tableName() {
+        return "TABLE_NAME";
+    }
+
+
+    @Override
+    public String tableComment() {
+        return "COMMENTS";
+    }
+
+
+    @Override
+    public String fieldName() {
+        return "COLUMN_NAME";
+    }
+
+
+    @Override
+    public String fieldType() {
+        return "DATA_TYPE";
+    }
+
+
+    @Override
+    public String fieldComment() {
+        return "COMMENTS";
+    }
+
+    @Override
+    public String fieldKey() {
+        return "KEY";
+    }
 }

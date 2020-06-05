@@ -15,8 +15,6 @@
  */
 package org.midnight.generator.converter;
 
-import com.baomidou.mybatisplus.generator.config.rules.DbColumnType;
-import com.baomidou.mybatisplus.generator.config.rules.IColumnType;
 
 /**
  * SQLServer 字段类型转换

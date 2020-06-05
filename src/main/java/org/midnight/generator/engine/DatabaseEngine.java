@@ -1,5 +1,6 @@
 package org.midnight.generator.engine;
 
+import org.midnight.generator.converter.ITypeConvert;
 import org.midnight.generator.pojo.TableInfo;
 import org.midnight.generator.properties.DatabaseProperties;
 import org.midnight.generator.query.AbstractQuery;
@@ -15,6 +16,8 @@ import java.util.List;
 public interface DatabaseEngine {
 
     AbstractQuery getQuery();
+
+    ITypeConvert getConverter();
 
     default Connection getConnection(DatabaseProperties properties)throws Exception{
         Class.forName(properties.getDriverClassName());

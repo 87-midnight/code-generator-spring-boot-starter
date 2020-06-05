@@ -15,9 +15,6 @@
  */
 package org.midnight.generator.converter;
 
-import com.baomidou.mybatisplus.generator.config.GlobalConfig;
-import com.baomidou.mybatisplus.generator.config.po.TableField;
-import com.baomidou.mybatisplus.generator.config.rules.IColumnType;
 
 /**
  * 数据库字段类型转换

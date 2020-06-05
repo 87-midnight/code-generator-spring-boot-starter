@@ -12,7 +12,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 public enum DatabaseEnum {
-    mysql(0),oracle(1),postgres(2);
+    mysql(0),oracle(1),postgres(2),sqlserver(3);
 
     private int type;
 }

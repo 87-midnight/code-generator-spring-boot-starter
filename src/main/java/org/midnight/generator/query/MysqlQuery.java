@@ -17,4 +17,38 @@ public class MysqlQuery implements AbstractQuery<String>{
     public String queryTableInfo(String tableName) {
         return String.format("show table status where Name = '%s'", tableName);
     }
+
+    @Override
+    public String tableName() {
+        return "NAME";
+    }
+
+
+    @Override
+    public String tableComment() {
+        return "COMMENT";
+    }
+
+
+    @Override
+    public String fieldName() {
+        return "FIELD";
+    }
+
+
+    @Override
+    public String fieldType() {
+        return "TYPE";
+    }
+
+
+    @Override
+    public String fieldComment() {
+        return "COMMENT";
+    }
+
+    @Override
+    public String fieldKey() {
+        return "KEY";
+    }
 }

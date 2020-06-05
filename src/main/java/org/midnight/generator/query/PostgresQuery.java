@@ -17,4 +17,38 @@ public class PostgresQuery implements AbstractQuery<String> {
     public String queryTableInfo(String tableName) {
         return "SELECT A.tablename, obj_description(relfilenode, 'pg_class') AS comments FROM pg_tables A, pg_class B WHERE A.schemaname='%s' AND A.tablename = B.relname";
     }
+
+    @Override
+    public String tableName() {
+        return "tablename";
+    }
+
+
+    @Override
+    public String tableComment() {
+        return "comments";
+    }
+
+
+    @Override
+    public String fieldName() {
+        return "name";
+    }
+
+
+    @Override
+    public String fieldType() {
+        return "type";
+    }
+
+
+    @Override
+    public String fieldComment() {
+        return "comment";
+    }
+
+    @Override
+    public String fieldKey() {
+        return "key";
+    }
 }
